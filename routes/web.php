@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,49 +60,74 @@ Route:: get('/', function () {
 //     })-> whereIn('category',['laptop','pc','mobile']);
 // });
 
-Route:: prefix('task1')->group(function(){
+// // ------------- Task 1 ----------------
 
-    Route :: get('/', function() {
-        return view ('home');
+// Route:: prefix('task1')->group(function(){
 
-    });
+//     Route :: get('/', function() {
+//         return view ('home');
+
+//     });
    
-    Route :: get('/about', function() {
-        return view ('about');
+//     Route :: get('/about', function() {
+//         return view ('about');
 
-    });
+//     });
 
-    Route :: get('/contact us', function() {
-        return view ('contactUs');
+//     Route :: get('/contact us', function() {
+//         return view ('contactUs');
 
-    });
+//     });
 
-    Route :: prefix('/blog')->group(function(){
+//     Route :: prefix('/blog')->group(function(){
 
-        Route :: get('/', function() {
-            return view ('blogHome');
+//         Route :: get('/', function() {
+//             return view ('blogHome');
     
-        });
+//         });
 
-        Route :: get('/science', function() {
-            return view ('scineceBlog');
+//         Route :: get('/science', function() {
+//             return view ('scineceBlog');
     
-        });
+//         });
 
-        Route :: get('/sport', function() {
-            return view ('sportBlog');
+//         Route :: get('/sport', function() {
+//             return view ('sportBlog');
     
-        });
+//         });
 
-        Route :: get('/math', function() {
-            return view ('mathBlog');
+//         Route :: get('/math', function() {
+//             return view ('mathBlog');
     
-        });
+//         });
 
-        Route :: get('/medical', function() {
-            return view ('medicalBlog');
+//         Route :: get('/medical', function() {
+//             return view ('medicalBlog');
     
-        });
+//         });
 
-    });
+//     });
+// });
+
+// ------------- Session 3 ---------------
+
+Route :: get('login',function(){
+    return view('login');
 });
+
+Route :: post('logged',function(){
+    return "You Are Logged in";
+})->name('logged');
+
+Route:: get('control',[ExampleController::class,'show']); 
+
+//------------------------------------------
+// // Route for the car table
+
+Route:: post('storeCar',[CarController::class,'store'])->name('storeCar'); 
+Route:: get('createCar',[CarController::class,'create']); 
+Route:: get('cars',[CarController::class,'index']); 
+
+// ------------- Session 4 ---------------
+
+
