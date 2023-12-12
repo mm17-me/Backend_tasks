@@ -11,21 +11,22 @@
 <body>
 @include('includes.nav')
 <div class="container">
-  <h2>Add new car data</h2>
-  <form action="{{ route('storeCar') }}" method="post">
+  <h2>update car data</h2>
+  <form action="{{ route('update', [$car->id]) }}" method="post">
     @csrf
+    @method('put')
     <div class="form-group">
       <label for="email">Title:</label>
-      <input type="text" class="form-control" id="title" placeholder="enter title" name="title">
+      <input type="text" class="form-control" id="title" placeholder="enter title" name="title" value="{{ $car->title }}">
     </div>
     <div class="form-group">
       <label for="pwd">description:</label>
-      <textarea class="form-control" name="description" cols="60" rows="3"></textarea>
+      <textarea class="form-control" name="description" cols="60" rows="3">{{ $car->description }}</textarea>
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="published"> Published</label>
+      <label><input type="checkbox" name="published" @checked($car->published)> Published</label>
     </div>
-    <button type="submit" class="btn btn-default">Insert</button>
+    <button type="submit" class="btn btn-default">Update</button>
   </form>
 </div>
 

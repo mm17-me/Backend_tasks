@@ -4,8 +4,8 @@
       <a class="navbar-brand" href="#">Cars</a>
     </div>
     <ul class="nav navbar-nav">
-          <li class="active"><a href="cars">Home</a></li>
-          <li><a href="createCar">Insert Car</a></li>
+          <li class="active"><a href="{{ route('cars') }}">Home</a></li>
+          <li><a href="{{ route('createCar') }}">Insert Car</a></li>
           <li><a href="#">Page 1-2</a></li>
           <li><a href="#">Page 1-3</a></li>
         </ul>

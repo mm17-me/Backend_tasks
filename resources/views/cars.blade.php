@@ -22,11 +22,17 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($cars as $car)
       <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
+        <td>{{ $car->title }}</td>
+        <td>{{ $car->description }}</td>
+        <td>{{ $car->published }}</td>
+        <td><a href="updateCar/{{ $car->id }}">Edit</a></td>
+        <td><a href="showCar/{{ $car->id }}">Show</a></td>
+
       </tr>
+
+      @endforeach
     </tbody>
   </table>
 </div>

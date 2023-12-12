@@ -121,13 +121,15 @@ Route :: post('logged',function(){
 
 Route:: get('control',[ExampleController::class,'show']); 
 
-//------------------------------------------
+// ------------- Session 4 ---------------
+
 // // Route for the car table
 
 Route:: post('storeCar',[CarController::class,'store'])->name('storeCar'); 
-Route:: get('createCar',[CarController::class,'create']); 
-Route:: get('cars',[CarController::class,'index']); 
+Route:: get('createCar',[CarController::class,'create'])->name('createCar'); 
 
-// ------------- Session 4 ---------------
+// ------------- Session 5 ---------------
 
-
+Route:: get('cars',[CarController::class,'index'])->name('cars'); 
+Route:: get('updateCar/{id}',[CarController::class,'edit']); 
+Route:: put('update/{id}',[CarController::class,'update'])->name('update'); 
