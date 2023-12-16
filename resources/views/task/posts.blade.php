@@ -28,6 +28,7 @@
         <td>{{ $post->created_at}}</td>
         <td><a href="updatePost/{{ $post->id }}">Edit</a></td>
         <td><a href="showPost/{{ $post->id }}">Show Post</a></td>
+        <td><a href="deletePost/{{ $post->id }}">Delete Post</a></td>
 
 
 

@@ -15,9 +15,11 @@ use App\Http\Controllers\PostController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route:: get('/', function () {
+Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 // // Route:: fallback(function(){ // if the page is not exist it return back to the homepage
 // //     return redirect('/');
@@ -110,17 +112,20 @@ Route:: get('/', function () {
 //     });
 // });
 
+
 // ------------- Session 3 ---------------
 
-Route :: get('login',function(){
+Route::post('login',function(){
     return view('login');
 });
+
 
 Route :: post('logged',function(){
     return "You Are Logged in";
 })->name('logged');
 
 Route:: get('control',[ExampleController::class,'show']); 
+
 
 // ------------- Session 4 ---------------
 
@@ -133,8 +138,20 @@ Route:: get('createCar',[CarController::class,'create'])->name('createCar');
 
 Route:: get('cars',[CarController::class,'index'])->name('cars'); 
 Route:: get('updateCar/{id}',[CarController::class,'edit']); 
-Route:: put('update/{id}',[CarController::class,'update'])->name('update'); 
+//Route:: put('update/{id}',[CarController::class,'update'])->name('updateCar'); 
+Route::put('changeCar/{id}',[CarController::class,'update'])->name('changeCar'); 
 Route:: get('showCar/{id}',[CarController::class,'show']); 
+
+// ------------- Session 6 ---------------
+Route:: get('deleteCar/{id}',[CarController::class,'destroy']); 
+Route:: get('trashed',[CarController::class,'trashed'])->name('trashed'); 
+Route:: get('forceDelete/{id}',[CarController::class,'forceDelete'])->name('forceDelete'); 
+Route:: get('restoreCar/{id}',[CarController::class,'restore'])->name('restoreCar'); 
+
+
+
+
+
 
 
 // ***************** task routs ***************
@@ -147,6 +164,6 @@ Route:: get('posts',[PostController::class,'index'])->name('posts');
 // ------------- day 5 -----------------
 
 Route:: get('updatePost/{id}',[PostController::class,'edit']); 
-Route:: put('update/{id}',[PostController::class,'update'])->name('update'); 
+Route:: put('update/{id}',[PostController::class,'update'])->name('updatePosts'); 
 Route:: get('showPost/{id}',[PostController::class,'show']); 
 

@@ -12,7 +12,7 @@
 @include('includes.postsNav')
 <div class="container">
   <h2>Edit Post</h2>
-  <form action="{{ route('update', [$post->id]) }}" method="post">
+  <form action="{{ route('updatePosts', [$post->id]) }}" method="post">
     @csrf
     @method('put')
     <div class="form-group">

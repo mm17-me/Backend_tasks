@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cars List</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,15 +11,15 @@
 <body>
 @include('includes.nav')
 <div class="container">
-  <h2>Cars table of content</h2>
+  <h2>Hover Rows</h2>
+  <p>The .table-hover class enables a hover state on table rows:</p>            
   <table class="table table-hover">
     <thead>
       <tr>
         <th>Title</th>
         <th>Description</th>
         <th>Published</th>
-        <th>Edit</th>
-        <th>Show</th>
+        <th>Restor</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -29,16 +29,8 @@
         <td>{{ $car->title }}</td>
         <td>{{ $car->description }}</td>
         <td>{{ $car->published? "Yes" : "No" }}</td>
-        <!-- another way to chang 0/1 to yes/no<td>
-          @if($car->published)
-            yes
-          @else
-            No
-          @endif
-        </td> -->
-        <td><a href="updateCar/{{ $car->id }}">Edit</a></td>
-        <td><a href="showCar/{{ $car->id }}">Show</a></td>
-        <td><a href="deleteCar/{{ $car->id }}"onclick="return confirm('Are you sure you want to delete?')"> Delete </a></td>
+        <td><a href="restoreCar/{{ $car->id }}"> Restore </a></td>
+        <td><a href="forceDelete/{{ $car->id }}"onclick="return confirm('Are you sure you want to delete?')"> Force Delete </a></td>
 
 
       </tr>
