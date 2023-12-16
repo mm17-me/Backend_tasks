@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,3 +134,9 @@ Route:: get('createCar',[CarController::class,'create'])->name('createCar');
 Route:: get('cars',[CarController::class,'index'])->name('cars'); 
 Route:: get('updateCar/{id}',[CarController::class,'edit']); 
 Route:: put('update/{id}',[CarController::class,'update'])->name('update'); 
+
+// ------------- task routs -----------------
+
+Route:: post('storePost',[PostController::class,'store'])->name('storePost'); 
+Route:: get('addPost',[PostController::class,'create'])->name('addPost'); 
+Route:: get('posts',[PostController::class,'index'])->name('posts'); 
