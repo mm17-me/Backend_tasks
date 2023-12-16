@@ -16,10 +16,8 @@
     <thead>
       <tr>
         <th>Title</th>
-        <th>Description</th>
-        <th>Author</th>
-        <th>Published</th>
         <th>Created at</th>
+
 
       </tr>
     </thead>
@@ -27,10 +25,11 @@
       @foreach($posts as $post)
       <tr>
         <td>{{ $post->title }}</td>
-        <td>{{ $post->description }}</td>
-        <td>{{ $post->author }}</td>
-        <td>{{ $post->published? "Yes" : "No" }}</td>
         <td>{{ $post->created_at}}</td>
+        <td><a href="updatePost/{{ $post->id }}">Edit</a></td>
+        <td><a href="showPost/{{ $post->id }}">Show Post</a></td>
+
+
 
       </tr>
 

@@ -134,9 +134,19 @@ Route:: get('createCar',[CarController::class,'create'])->name('createCar');
 Route:: get('cars',[CarController::class,'index'])->name('cars'); 
 Route:: get('updateCar/{id}',[CarController::class,'edit']); 
 Route:: put('update/{id}',[CarController::class,'update'])->name('update'); 
+Route:: get('showCar/{id}',[CarController::class,'show']); 
 
-// ------------- task routs -----------------
+
+// ***************** task routs ***************
+
+// -------------- day4 -----------------
 
 Route:: post('storePost',[PostController::class,'store'])->name('storePost'); 
 Route:: get('addPost',[PostController::class,'create'])->name('addPost'); 
 Route:: get('posts',[PostController::class,'index'])->name('posts'); 
+// ------------- day 5 -----------------
+
+Route:: get('updatePost/{id}',[PostController::class,'edit']); 
+Route:: put('update/{id}',[PostController::class,'update'])->name('update'); 
+Route:: get('showPost/{id}',[PostController::class,'show']); 
+
