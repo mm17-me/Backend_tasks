@@ -18,14 +18,23 @@
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" class="form-control" id="title" placeholder="enter title" name="title" value="{{ $post->title }}">
+      @error('title')
+        {{$message}}
+      @enderror
     </div>
     <div class="form-group">
       <label for="pwd">description:</label>
       <textarea class="form-control" name="description" cols="60" rows="3">{{ $post->description }}</textarea>
+      @error('description')
+        {{$message}}
+      @enderror
     </div>
     <div class="form-group">
       <label for="author">Author:</label>
       <input type="text" class="form-control" id="author" placeholder="enter author name" name="author" value="{{ $post->author }}">
+      @error('author')
+        {{$message}}
+      @enderror
     </div>
     <div class="checkbox">
       <label><input type="checkbox" name="published" @checked($post->published)> Published</label>

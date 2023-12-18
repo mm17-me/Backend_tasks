@@ -6,7 +6,7 @@
     <ul class="nav navbar-nav">
           <li class="active"><a href="{{ route('posts') }}">Home</a></li>
           <li><a href="{{ route('addPost') }}">Add Post</a></li>
-          <li><a href="#">Page 1-2</a></li>
+          <li><a href="{{ route('trashedPost') }}">Trashed</a></li>
           <li><a href="#">Page 1-3</a></li>
         </ul>
   </div>
