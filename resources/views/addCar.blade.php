@@ -29,7 +29,7 @@
   @enderror
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="published"> Published</label>
+      <label><input type="checkbox" name="published" @checked(old("published"))> Published</label>
     </div>
     <button type="submit" class="btn btn-default">Insert</button>
   </form>

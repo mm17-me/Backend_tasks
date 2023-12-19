@@ -149,7 +149,12 @@ Route:: get('forceDelete/{id}',[CarController::class,'forceDelete'])->name('forc
 Route:: get('restoreCar/{id}',[CarController::class,'restore'])->name('restoreCar'); 
 
 
+// ------------- Session 7---------------
 
+Route :: get('testimg', function() {
+                return view ('testt');
+        
+            });
 
 
 

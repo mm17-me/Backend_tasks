@@ -50,10 +50,11 @@ class CarController extends Controller
         // // -----------------------------------------------
 
         // $data = $request->only($this->columns);
+        $errorMessages= $this->messages();
         $data= $request->validate([
             'title'=>'required|string|max:50',
             'description'=>'required|string',
-        ]);
+        ], $errorMessages);
 
         $data['published'] = isset($request->published);
         Car::create($data);
@@ -121,5 +122,13 @@ class CarController extends Controller
     {
         Car::where('id', $id)->restore();
         return redirect("cars");
+    }
+
+    public function messages(){
+       return[
+            'title.required'=>'العنوان مطلوب',
+            'title.string'=>'Should be string',
+            'description.required'=> 'should be text',
+            ];
     }
 }
