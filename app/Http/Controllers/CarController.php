@@ -101,10 +101,11 @@ class CarController extends Controller
         $data= $request->validate([
             'title'=>'required|string|max:50',
             'description'=>'required|string',
-            'image'=>'required|mimes:png,jpg,jpeg|max:2048',
+            'image'=>'mimes:png,jpg,jpeg|max:2048',
         ], $errorMessagesUpdate);
         $fileName= $this->uploadFile($request->image,'assets/images');
-        $data['published'] = isset($request->published);        
+        $data['published'] = isset($request->published);
+        $data['image'] = $fileName;
         Car::where('id', $id)->update($data);
         return redirect("cars");
     }
