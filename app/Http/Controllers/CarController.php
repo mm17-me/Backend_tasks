@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Traits\Common;
+ 
 
 class CarController extends Controller
 {
+    
+    // private $columns = ['title','description', 'published'];
+
+    use common;
+
     /**
      * Display a listing of the resource.
      */
-    // private $columns = ['title','description', 'published'];
-
 
     public function index()
     {
@@ -54,9 +59,12 @@ class CarController extends Controller
         $data= $request->validate([
             'title'=>'required|string|max:50',
             'description'=>'required|string',
-        ], $errorMessages);
+            'image'=>'required|mimes:png,jpg,jpeg|max:2048',
 
+        ], $errorMessages);
+        $fileName= $this->uploadFile($request->image,'assets/images');
         $data['published'] = isset($request->published);
+        $data['image'] = $fileName;
         Car::create($data);
         return redirect("cars");
     }
@@ -86,12 +94,18 @@ class CarController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $data = $request->only($this->columns);
+
+        // -------------- task Day 7 ---------------
+
+        $errorMessagesUpdate= $this->messages();
         $data= $request->validate([
             'title'=>'required|string|max:50',
             'description'=>'required|string',
-        ]);
+            'image'=>'required|mimes:png,jpg,jpeg|max:2048',
+        ], $errorMessagesUpdate);
+        $fileName= $this->uploadFile($request->image,'assets/images');
         $data['published'] = isset($request->published);
+        $data['image'] = $fileName;
         Car::where('id', $id)->update($data);
         return redirect("cars");
     }
@@ -129,6 +143,11 @@ class CarController extends Controller
             'title.required'=>'العنوان مطلوب',
             'title.string'=>'Should be string',
             'description.required'=> 'should be text',
+            'image.required'=> 'Please selcet car image',
+            'image.mimes'=> 'Incorrect image type',
+            'image.max'=> 'Max file size exceeded',
+
+
             ];
     }
 }

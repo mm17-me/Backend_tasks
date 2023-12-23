@@ -156,6 +156,14 @@ Route :: get('testimg', function() {
         
             });
 
+Route :: get('image', function() {
+    return view ('image');
+
+});
+Route:: post('imageUpload',[ExampleController::class,'upload'])->name('imageUpload'); 
+
+
+
 
 
 

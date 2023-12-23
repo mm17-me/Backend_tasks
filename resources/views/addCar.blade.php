@@ -12,10 +12,10 @@
 @include('includes.nav')
 <div class="container">
   <h2>Add new car data</h2>
-  <form action="{{ route('storeCar') }}" method="post">
+  <form action="{{ route('storeCar') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
-      <label for="email">Title:</label>
+      <label for="title">Title:</label>
       <input type="text" class="form-control" id="title" placeholder="enter title" name="title" value="{{ old('title') }}">
   @error('title')
   {{ $message }}
@@ -28,6 +28,14 @@
   {{ $message }}
   @enderror
     </div>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="file" class="form-control" id="image" placeholder="enter image" name="image">
+  @error('image')
+  {{ $message }}
+  @enderror
+    </div>
+    <div class="form-group">
     <div class="checkbox">
       <label><input type="checkbox" name="published" @checked(old("published"))> Published</label>
     </div>
