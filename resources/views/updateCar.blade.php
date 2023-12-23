@@ -25,9 +25,13 @@
     </div>
     <div class="form-group">
       <label for="image">Image:</label>
-      <input type="file" class="form-control" id="image" placeholder="enter image" name="image">
+      <input type="file" class="form-control" id="image" placeholder="enter image" name="image" value="{{ $car->image }}">
       <br>
-      <!-- <img src="{{ asset('assets/images/') }}" alt="car" style="width:200px;"> -->
+      @if($car->image)
+      <img src="{{ asset('assets/images/. $car->image') }}" alt="car" style="width:200px;">
+    @endif
+    <br>
+    <br>
       @error('image')
       {{ $message }}
       @enderror

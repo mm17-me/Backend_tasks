@@ -104,8 +104,7 @@ class CarController extends Controller
             'image'=>'required|mimes:png,jpg,jpeg|max:2048',
         ], $errorMessagesUpdate);
         $fileName= $this->uploadFile($request->image,'assets/images');
-        $data['published'] = isset($request->published);
-        $data['image'] = $fileName;
+        $data['published'] = isset($request->published);        
         Car::where('id', $id)->update($data);
         return redirect("cars");
     }
