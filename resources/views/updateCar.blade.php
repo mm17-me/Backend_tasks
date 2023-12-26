@@ -28,7 +28,7 @@
       <input type="file" class="form-control" id="image" placeholder="enter image" name="image" value="{{ $car->image }}">
       <br>
       @if($car->image)
-      <img src="{{ asset('assets/images/. $car->image') }}" alt="car" style="width:200px;">
+      <img src="{{ asset('assets/images/'. $car->image) }}" alt="car" style="width:200px;">
     @endif
     <br>
     <br>
@@ -36,6 +36,9 @@
       {{ $message }}
       @enderror
     </div>
+    <!-- if i didn't update it would be return with the old value with 'oldImage' in the request -->
+    <input type="hidden" name="oldImage" value="{{ $car->image }}">
+
     <div class="checkbox">
       <label><input type="checkbox" name="published" @checked($car->published)> Published</label>
     </div>

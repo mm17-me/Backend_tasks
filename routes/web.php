@@ -163,7 +163,12 @@ Route :: get('image', function() {
 Route:: post('imageUpload',[ExampleController::class,'upload'])->name('imageUpload'); 
 
 
+// ------------- Session 8 ---------------
 
+Route :: get('homePage', function() {
+    return view ('testHome');
+
+});
 
 
 
