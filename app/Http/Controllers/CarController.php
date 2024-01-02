@@ -89,7 +89,8 @@ class CarController extends Controller
     public function edit(string $id)
     {
         $car = car::findOrFail($id);
-        return view('updateCar', compact('car') );
+        $categories = Category::get();
+        return view('updateCar', compact('car','categories') );
     }
 
     /**
@@ -106,7 +107,7 @@ class CarController extends Controller
             'description'=>'required|string',
             'image'=>'sometimes|mimes:png,jpg,jpeg|max:2048',
             'category_id'=>'required',
-            
+
         ], $errorMessagesUpdate);
 
         if ($request->hasFile('image')){

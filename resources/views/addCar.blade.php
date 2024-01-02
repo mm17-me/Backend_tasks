@@ -39,9 +39,16 @@
       <label for="category">Category:</label>
       <select name="category_id" id="">
           <option value="">Select category</option>
-          @foreach($categories as $category)
+         
+          <!-- another way by Eng.Peter task answer
+            @foreach($categories as $category)
           <option value="{{ $category->id }}">{{ $category->cat_name }}</option>
-          @endforeach
+          @endforeach -->
+
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}" @selected(old('category_id') == $category)> {{ $category->cat_name }}  </option>
+        @endforeach
+
       </select>
         @error('category_id')
         {{ $message }}
