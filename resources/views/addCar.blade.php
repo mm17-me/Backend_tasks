@@ -31,9 +31,21 @@
     <div class="form-group">
       <label for="image">Image:</label>
       <input type="file" class="form-control" id="image" placeholder="enter image" name="image">
-  @error('image')
-  {{ $message }}
-  @enderror
+          @error('image')
+          {{ $message }}
+          @enderror
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select name="category_id" id="">
+          <option value="">Select category</option>
+          @foreach($categories as $category)
+          <option value="{{ $category->id }}">{{ $category->cat_name }}</option>
+          @endforeach
+      </select>
+        @error('category_id')
+        {{ $message }}
+        @enderror
     </div>
     <div class="form-group">
     <div class="checkbox">
