@@ -47,7 +47,7 @@
       @foreach ($categories as $category)
             <option value="{{ $category->id }}" @selected(old('category_id') == $category)> {{ $category->cat_name }}  </option>
         @endforeach
-    <!-- @foreach ($categories as $category)
+    <!-- @foreach ($categories as $category) 
         <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}> {{ $category->cat_name }} </option>
     @endforeach -->
 </select>
