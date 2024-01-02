@@ -1,4 +1,5 @@
-<section class="Feautes section">
+		<!-- Start Feautes -->
+		<section class="Feautes section">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -46,3 +47,4 @@
 				</div>
 			</div>
 		</section>
+		<!--/ End Feautes -->

@@ -1,5 +1,5 @@
-<!-- Preloader -->
-<div class="preloader">
+		<!-- Preloader -->
+        <div class="preloader">
             <div class="loader">
                 <div class="loader-outter"></div>
                 <div class="loader-inner"></div>
@@ -13,8 +13,8 @@
             </div>
         </div>
         <!-- End Preloader -->
-		
-		<!-- Get Pro Button -->
+
+        		<!-- Get Pro Button -->
 		<ul class="pro-features">
 			<a class="get-pro" href="#">Get Pro</a>
 			<li class="big-title">Pro Version Available on Themeforest</li>

@@ -1,4 +1,5 @@
-<section class="why-choose section" >
+		<!-- Start Why choose -->
+		<section class="why-choose section" >
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -56,3 +57,4 @@
 				</div>
 			</div>
 		</section>
+		<!--/ End Why choose -->

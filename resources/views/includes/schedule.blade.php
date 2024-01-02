@@ -1,4 +1,5 @@
-<section class="schedule">
+		<!-- Start Schedule Area -->
+		<section class="schedule">
 			<div class="container">
 				<div class="schedule-inner">
 					<div class="row">
@@ -58,3 +59,4 @@
 				</div>
 			</div>
 		</section>
+		<!--/End Start schedule Area -->

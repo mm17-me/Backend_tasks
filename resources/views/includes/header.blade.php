@@ -1,4 +1,5 @@
-<header class="header" >
+		<!-- Header Area -->
+		<header class="header" >
 			<!-- Topbar -->
 			<div class="topbar">
 				<div class="container">
@@ -8,7 +9,7 @@
 							<ul class="top-link">
 								<li><a href="#">About</a></li>
 								<li><a href="#">Doctors</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="{{ route('contact') }}">Contact</a></li>
 								<li><a href="#">FAQ</a></li>
 							</ul>
 							<!-- End Contact -->
@@ -33,7 +34,7 @@
 							<div class="col-lg-3 col-md-3 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
-									<a href="index.html"><img src="{{ asset('assets/img/logo.png') }}" alt="#"></a>
+									<a href="{{ route('testHome') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="#"></a>
 								</div>
 								<!-- End Logo -->
 								<!-- Mobile Nav -->
@@ -45,24 +46,24 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
+											<li class="active"><a href="{{ route('testHome') }}">Home <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="index.html">Home Page 1</a></li>
+													<li><a href="{{ route('testHome') }}">Home Page 1</a></li>
 												</ul>
 											</li>
 											<li><a href="#">Doctos </a></li>
 											<li><a href="#">Services </a></li>
 											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="404.html">404 Error</a></li>
+													<li><a href="{{ route('404') }}">404 Error</a></li>
 												</ul>
 											</li>
 											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="blog-single.html">Blog Details</a></li>
+													<li><a href="{{ route('blog-single') }}">Blog Details</a></li>
 												</ul>
 											</li>
-											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="{{ route('contact') }}">Contact Us</a></li>
 										</ul>
 									</nav>
 								</div>
@@ -79,4 +80,4 @@
 			</div>
 			<!--/ End Header Inner -->
 		</header>
-	
+		<!-- End Header Area -->

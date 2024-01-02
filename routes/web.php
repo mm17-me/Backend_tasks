@@ -165,11 +165,22 @@ Route:: post('imageUpload',[ExampleController::class,'upload'])->name('imageUplo
 
 // ------------- Session 8 ---------------
 
-Route :: get('homePage', function() {
-    return view ('testHome');
+Route::get('test', function(){
+    return view('testHome');
+})->name('testHome');
 
-});
+Route::get('404', function(){
+    return view('404');
+})->name('404');
 
+Route::get('contact', function(){
+    return view('contact');
+})->name('contact');
+
+Route :: get('blogSingle', function() {
+    return view ('blog-single');
+
+})->name('blog-single');
 
 
 // ***************** task routs ***************

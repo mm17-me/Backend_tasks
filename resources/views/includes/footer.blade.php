@@ -1,4 +1,5 @@
-<footer id="footer" class="footer ">
+		<!-- Footer Area -->
+		<footer id="footer" class="footer ">
 			<!-- Footer Top -->
 			<div class="footer-top">
 				<div class="container">
@@ -83,3 +84,4 @@
 			</div>
 			<!--/ End Copyright -->
 		</footer>
+		<!--/ End Footer Area -->

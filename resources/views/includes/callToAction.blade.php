@@ -1,4 +1,5 @@
-<section class="call-action overlay" data-stellar-background-ratio="0.5">
+		<!-- Start Call to action -->
+		<section class="call-action overlay" data-stellar-background-ratio="0.5">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
@@ -14,3 +15,4 @@
 				</div>
 			</div>
 		</section>
+		<!--/ End Call to action -->
