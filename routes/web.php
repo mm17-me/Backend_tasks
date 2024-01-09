@@ -132,7 +132,7 @@ Route:: get('control',[ExampleController::class,'show']);
 // // Route for the car table
 
 Route:: post('storeCar',[CarController::class,'store'])->name('storeCar'); 
-Route:: get('createCar',[CarController::class,'create'])->name('createCar'); 
+Route:: get('createCar',[CarController::class,'create'])->middleware('verified')->name('createCar'); 
 
 // ------------- Session 5 ---------------
 
@@ -183,25 +183,30 @@ Route :: get('blogSingle', function() {
 })->name('blog-single');
 
 
-// ***************** task routs ***************
+// ------------- Session 11 ---------------
 
-// -------------- day4 -----------------
+Auth::routes(['verify'=>true]);
 
-Route:: post('storePost',[PostController::class,'store'])->name('storePost'); 
-Route:: get('addPost',[PostController::class,'create'])->name('addPost'); 
-Route:: get('posts',[PostController::class,'index'])->name('posts'); 
-
-// ------------- day 5 -----------------
-
-Route:: get('updatePost/{id}',[PostController::class,'edit']); 
-Route:: put('update/{id}',[PostController::class,'update'])->name('updatePosts'); 
-Route:: get('showPost/{id}',[PostController::class,'show']); 
-
-// ------------- day 6 -----------------
-
-Route:: get('deletePost/{id}',[PostController::class,'destroy']); 
-Route:: get('trashedPost',[PostController::class,'trash'])->name('trashedPost');
-Route:: get('forceDelete/{id}',[PostController::class,'forceDelete'])->name('forceDeletePost');
-Route:: get('restorePost/{id}',[PostController::class,'restore'])->name('restorePost');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+// // ***************** task routs ***************
+
+// // -------------- day4 -----------------
+
+// Route:: post('storePost',[PostController::class,'store'])->name('storePost'); 
+// Route:: get('addPost',[PostController::class,'create'])->name('addPost'); 
+// Route:: get('posts',[PostController::class,'index'])->name('posts'); 
+
+// // ------------- day 5 -----------------
+
+// Route:: get('updatePost/{id}',[PostController::class,'edit']); 
+// Route:: put('update/{id}',[PostController::class,'update'])->name('updatePosts'); 
+// Route:: get('showPost/{id}',[PostController::class,'show']); 
+
+// // ------------- day 6 -----------------
+
+// Route:: get('deletePost/{id}',[PostController::class,'destroy']); 
+// Route:: get('trashedPost',[PostController::class,'trash'])->name('trashedPost');
+// Route:: get('forceDelete/{id}',[PostController::class,'forceDelete'])->name('forceDeletePost');
+// Route:: get('restorePost/{id}',[PostController::class,'restore'])->name('restorePost');
