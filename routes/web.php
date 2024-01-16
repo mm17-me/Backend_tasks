@@ -130,24 +130,34 @@ Route:: get('control',[ExampleController::class,'show']);
 // ------------- Session 4 ---------------
 
 // // Route for the car table
+Route::group(
+    [
 
-Route:: post('storeCar',[CarController::class,'store'])->name('storeCar'); 
-Route:: get('createCar',[CarController::class,'create'])->middleware('verified')->name('createCar'); 
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] 
 
-// ------------- Session 5 ---------------
 
-Route:: get('cars',[CarController::class,'index'])->name('cars'); 
-Route:: get('updateCar/{id}',[CarController::class,'edit']); 
-//Route:: put('update/{id}',[CarController::class,'update'])->name('updateCar'); 
-Route::put('changeCar/{id}',[CarController::class,'update'])->name('changeCar'); 
-Route:: get('showCar/{id}',[CarController::class,'show']); 
+    ],function(){
+    
+        Route:: post('storeCar',[CarController::class,'store'])->name('storeCar'); 
+    Route:: get('createCar',[CarController::class,'create'])->name('createCar'); 
 
-// ------------- Session 6 ---------------
-Route:: get('deleteCar/{id}',[CarController::class,'destroy']); 
-Route:: get('trashed',[CarController::class,'trashed'])->name('trashed'); 
-Route:: get('forceDelete/{id}',[CarController::class,'forceDelete'])->name('forceDelete'); 
-Route:: get('restoreCar/{id}',[CarController::class,'restore'])->name('restoreCar'); 
+    // ------------- Session 5 ---------------
 
+    Route:: get('cars',[CarController::class,'index'])->name('cars'); 
+    Route:: get('updateCar/{id}',[CarController::class,'edit']); 
+    //Route:: put('update/{id}',[CarController::class,'update'])->name('updateCar'); 
+    Route::put('changeCar/{id}',[CarController::class,'update'])->name('changeCar'); 
+    Route:: get('showCar/{id}',[CarController::class,'show']); 
+
+    // ------------- Session 6 ---------------
+    Route:: get('deleteCar/{id}',[CarController::class,'destroy']); 
+    Route:: get('trashed',[CarController::class,'trashed'])->name('trashed'); 
+    Route:: get('forceDelete/{id}',[CarController::class,'forceDelete'])->name('forceDelete'); 
+    Route:: get('restoreCar/{id}',[CarController::class,'restore'])->name('restoreCar'); 
+
+    
+});
 
 // ------------- Session 7---------------
 
@@ -188,6 +198,11 @@ Route :: get('blogSingle', function() {
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// ------------- Session 12 ---------------
+
+Route:: get('test20',[ExampleController::class,'createSession']); 
 
 
 // // ***************** task routs ***************
